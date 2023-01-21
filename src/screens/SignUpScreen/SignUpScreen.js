@@ -16,7 +16,7 @@ import SocialSignInButtons from '../../components/SocialSignInButtons';
 import { useNavigation } from '@react-navigation/native';
 import Input from '../../Input';
 import Loader from '../LoaderMessage/Loader';
-//import { SafeAreaView } from 'react-native-safe-area-context';
+
 import { AsyncStorageStatic } from 'react-native';
 
 
@@ -27,6 +27,7 @@ const SignUpScreen = () => {
       email: '',
       username : '',
       password : '',
+      phone    : '',
 
     });
 
@@ -50,6 +51,11 @@ const SignUpScreen = () => {
       } else if(input.password.length < 6){     // minimum length for password is 6
         handleError('Minimum Length of Password is 5', 'password'); 
       } 
+      if(!input.phone){
+        handleError('Please Input Phone', 'phone'); 
+  } else if(input.phone.length < 10){     // minimum length for address is 6
+    handleError('Minimum Length of Phone is 10', 'phone'); 
+  } 
       if(Valid){
         register();
       }
@@ -69,7 +75,7 @@ const SignUpScreen = () => {
           
         }
 
-      }, 3000)
+      }, 2000)
     }
     const navigation = useNavigation();
 
@@ -138,10 +144,16 @@ const SignUpScreen = () => {
         />   
         
         <Input 
-        placeholder='Re-Enter Password' 
-        iconName='lock-outline' 
-        label="Confirm Password" 
-        password  />   
+        keyboardType ="numeric" 
+        placeholder='Enter Your Phone Number' 
+        iconName='phone' 
+        label="Contact" 
+        error={error.phone}
+        onFocus={()=>{
+          handleError(null,'phone');
+        }}
+        onChangeText={(text)=>handleOnChange(text,"phone")}
+        />  
  
     <CustomButton text="Sign Up" onPress={onSignUpPresssed} />
 

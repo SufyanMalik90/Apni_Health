@@ -48,7 +48,7 @@ const HomeScreen = () => {
         
     
     </View>
-    <ImageSlider />
+    {/* <ImageSlider /> */}
 
     </ScrollView>
   )
