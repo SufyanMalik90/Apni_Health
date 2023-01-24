@@ -98,6 +98,34 @@ const DoctorRegistrationScreen = () => {
 
     };
 
+    let registerDoctor = () => {
+      fetch("http://10.0.2.2:5000/DrRegister", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          "Name": input.name,
+          "Phone": input.phone , 
+          "Qualify": input.qualification,
+          "InstituteName": input.institute,
+          "Specialization" : input.specialization,
+          "YofP": input.yearOfPass,
+          "Address": input.address,
+          "City": input.city,
+          "Hospital_Clanic": input.clinicHospital,
+        })
+      })
+      .then(res => res.json())
+      .then((result) => {
+          console.log(result);
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+    };
+
     const register = () =>{
         setLoading(true);
         setTimeout(() =>{
@@ -105,6 +133,8 @@ const DoctorRegistrationScreen = () => {
 
         try {
          // AsyncStorage.setItem
+         registerDoctor();
+         Alert.alert('Sucessful','Record Inserted');
           
         } catch (error) {
           Alert.alert('Error', 'Something Went Wrong..!!');
@@ -141,7 +171,7 @@ const DoctorRegistrationScreen = () => {
     <View style={styles.root}> 
       
 
-    <Text style={styles.title}>Register Your Pharmacy</Text>
+    <Text style={styles.title}>Register As A Doctor</Text>
 
     <Input 
         placeholder='Enter Your Full Name' 

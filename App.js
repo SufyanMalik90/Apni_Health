@@ -18,6 +18,8 @@ import OnBoardingScreen from './src/screens/OnBoardingScreens';
 import SplashScreen from './src/screens/SplashScreen/SplashScreen';
 import PharmacyRegistrationScreen from './src/screens/PharmacyRegistrationScreen';
 import DoctorRegistrationScreen from './src/screens/DoctorRegistrationScreen';
+import PharmacySearchScreen from './src/screens/PharmacySearchScreen';
+import HomeScreen from './src/screens/HomeScreen';
 
 const App = () => {
   
@@ -28,6 +30,8 @@ const App = () => {
       {/* <SignUpScreen /> */}
      {/* <ConfirmEmailScreen /> */}
      {/* <ForgotPasswordScreen /> */}
+     {/* <HomeScreen /> */}
+     {/* <PharmacySearchScreen /> */}
      <Navigation />
      {/* <PharmacyRegistrationScreen /> */}
     {/* <DoctorRegistrationScreen /> */}

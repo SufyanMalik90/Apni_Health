@@ -20,6 +20,8 @@ import { AsyncStorageStatic } from 'react-native';
 
 
 const PharmacyRegistrationScreen = () => {
+
+  // const navigation = useNavigation();
     
   const [input, setInput] = useState({
       pharmacy: '',
@@ -47,6 +49,7 @@ const PharmacyRegistrationScreen = () => {
           Valid = false;  
       }else if(input.license.length < 12) {
             handleError('Minimum Length of License is 12', 'license');
+            Valid = false;
         }
       if(!input.address){
             handleError('Please Input address', 'address'); 
@@ -76,6 +79,30 @@ const PharmacyRegistrationScreen = () => {
 
     };
 
+    let registerPharmacy = () => {
+      fetch("http://10.0.2.2:5000/PharmaRegister", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          "PharmacyName": input.pharmacy,
+          "LicenseNumber": input.license, 
+          "Address": input.address,
+          "Phone": input.phone,
+          "OwnerName" : input.name,
+          "City": input.city
+        })
+      })
+      .then(res => res.json())
+      .then((result) => {
+          console.log(result);
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+    };
     const register = () =>{
         setLoading(true);
         setTimeout(() =>{
@@ -83,6 +110,9 @@ const PharmacyRegistrationScreen = () => {
 
         try {
          // AsyncStorage.setItem
+         registerPharmacy();
+         Alert.alert('Sucessful','Record Inserted');
+        // navigation.navigate('SignIn');
           
         } catch (error) {
           Alert.alert('Error', 'Something Went Wrong..!!');
@@ -91,8 +121,8 @@ const PharmacyRegistrationScreen = () => {
 
       }, 2000)
     }
-    // const navigation = useNavigation();
-
+    
+    
     const onSignInPresssed = () => {
       //console.warn("Sign In");
 
@@ -132,7 +162,7 @@ const PharmacyRegistrationScreen = () => {
         onChangeText={(text)=>handleOnChange(text,"pharmacy")}
         />
      <Input 
-        placeholder='Enter License Number' 
+        placeholder='Enter License NO: i-e(R/S-000/year)' 
         iconName='page-previous-outline' 
         label="License"
         error={error.license}

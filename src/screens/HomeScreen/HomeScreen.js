@@ -5,15 +5,27 @@ import { View,
   Image,
   useWindowDimensions,
  } from 'react-native'
-import React from 'react'
-import { withSafeAreaInsets } from 'react-native-safe-area-context'
+import React, {useState}  from 'react'
 import ImageSlider from '../../components/ImageSlider'
 import  Icon  from 'react-native-vector-icons/MaterialCommunityIcons'
+import { useNavigation } from '@react-navigation/native';
 
 
-//const {height} = useWindowDimensions();
+
 
 const HomeScreen = () => {
+
+  const navigation = useNavigation();
+
+  const onPharmacyPressed = ()=> {
+    navigation.navigate('Pharmacy')
+  }
+
+  const onDoctorPressed = ()=> {
+    navigation.navigate('Doctor')
+  }
+
+
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
 
@@ -26,14 +38,14 @@ const HomeScreen = () => {
     
       <View style={styles.menu_Doctor}>
 
-        <Icon name='doctor' style={styles.logo}/>
+        <Icon name='doctor' style={styles.logo} onPress={onDoctorPressed}/>
         <Text style={styles.doctor_text}>Doctor
           <Text style={styles.doctor_search}>Search doctor around you</Text>
         </Text>
       </View>
 
       <View style={styles.menu_Doctor} >
-      <Icon name='clipboard-plus-outline' style={styles.logo}/>
+      <Icon name='clipboard-plus-outline' style={styles.logo} onPress={onPharmacyPressed}/>
         <Text style={styles.pharmacy_text}>Pharmacy</Text>
         
       </View>
