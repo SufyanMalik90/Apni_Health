@@ -10,21 +10,25 @@ import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
 import HomeScreen from '../screens/HomeScreen';
 import OnBoardingScreen from '../screens/OnBoardingScreens/OnBoardingScreen';
 import SplashScreen from '../screens/SplashScreen/SplashScreen';
+import PharmacySearchScreen from '../screens/PharmacySearchScreen';
+import DoctorSearchScreen from '../screens/DoctorSearchScreen';
 const Stack = createStackNavigator();
 
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Splash" component={SplashScreen} />
-      <Stack.Screen name="OnBoard" component={OnBoardingScreen} />  
-      <Stack.Screen name="SignIn" component={SignInScreen} />
-      <Stack.Screen name="SignUp" component={SignUpScreen} />
-      <Stack.Screen name="ConfirmEmail" component={ConfirmEmailScreen} />
-      
-      <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
-      <Stack.Screen name='Home' component={HomeScreen} />
-    </Stack.Navigator>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Splash" component={SplashScreen} />
+        <Stack.Screen name="OnBoard" component={OnBoardingScreen} />
+        <Stack.Screen name="SignIn" component={SignInScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} />
+        <Stack.Screen name='Home' component={HomeScreen} />
+        <Stack.Screen name="Pharmacy" component={PharmacySearchScreen} />
+        <Stack.Screen name="Doctor" component={DoctorSearchScreen} />
+        <Stack.Screen name="ConfirmEmail" component={ConfirmEmailScreen} />
+        <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
+
+      </Stack.Navigator>
     </NavigationContainer>
   )
 }

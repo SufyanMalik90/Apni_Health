@@ -33,6 +33,7 @@ const SignUpScreen = () => {
 
     const [loading,setLoading] = useState(false);
     const [error, setError] = useState({});
+
     const Validate = () => {
       Keyboard.dismiss(); // hide the keyboard
       let Valid = true;
@@ -62,13 +63,40 @@ const SignUpScreen = () => {
 
     };
 
+    let createUser = () => {
+      fetch("http://10.0.2.2:5000/signup", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body:JSON.stringify({
+          "username": input.username,
+          "phone": input.phone, 
+          "email": input.email,
+          "pass": input.password
+        })
+      })
+      .then(res => res.json())
+      .then((result) => {
+          console.log(result);
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+    };
     const register = () =>{
       setLoading(true);
       setTimeout(() =>{
         setLoading(false);
-
+        // createUser();
+        
         try {
-         // AsyncStorage.setItem
+         
+         createUser();
+         Alert.alert('Sucessful','Record Inserted');
+         navigation.navigate('SignIn');
+        // console.log(`Username is: ${input.username} Email: ${input.email} Password: ${input.password} Phone: ${input.phone}`);
           
         } catch (error) {
           Alert.alert('Error', 'Something Went Wrong..!!');
