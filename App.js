@@ -18,10 +18,14 @@ import OnBoardingScreen from './src/screens/OnBoardingScreens';
 import SplashScreen from './src/screens/SplashScreen/SplashScreen';
 import PharmacyRegistrationScreen from './src/screens/PharmacyRegistrationScreen';
 import DoctorRegistrationScreen from './src/screens/DoctorRegistrationScreen';
+<<<<<<< HEAD
 import PharmacySearchScreen from './src/screens/PharmacySearchScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import JoinUsScreen from './src/screens/JoinUsScreen';
 import DoctorSearchScreen from './src/screens/DoctorSearchScreen';
+=======
+import Draw from './src/components/Draw';
+>>>>>>> cf148d99b11d45e65b3542831fcf9b8ef4a986c8
 
 const App = () => {
   
@@ -32,11 +36,15 @@ const App = () => {
       {/* <SignUpScreen /> */}
      {/* <ConfirmEmailScreen /> */}
      {/* <ForgotPasswordScreen /> */}
+<<<<<<< HEAD
      {/* <HomeScreen /> */}
      {/* <PharmacySearchScreen /> */}
      {/* <DoctorSearchScreen /> */}
      <Navigation />
      {/* <JoinUsScreen /> */}
+=======
+     <Draw />
+>>>>>>> cf148d99b11d45e65b3542831fcf9b8ef4a986c8
      {/* <PharmacyRegistrationScreen /> */}
     {/* <DoctorRegistrationScreen /> */}
      {/* <SplashScreen /> */}
