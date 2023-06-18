@@ -5,7 +5,6 @@ import {
   ScrollView,
   Image,
   useWindowDimensions,
-<<<<<<< HEAD
  } from 'react-native'
 import React, {useState}  from 'react'
 import ImageSlider from '../../components/ImageSlider'
@@ -13,13 +12,6 @@ import  Icon  from 'react-native-vector-icons/MaterialCommunityIcons'
 import { useNavigation } from '@react-navigation/native';
 
 
-=======
-} from 'react-native';
-import React from 'react';
-import {withSafeAreaInsets} from 'react-native-safe-area-context';
-import ImageSlider from '../../components/ImageSlider';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
->>>>>>> cc82fcdb265f2aa97371b19d19840a54563f5066
 
 
 const HomeScreen = () => {
@@ -40,7 +32,6 @@ const HomeScreen = () => {
       <View style={styles.root}>
         <Text style={styles.text}>ApniHealth</Text>
 
-        <View style={styles.menu_Emergency}>
           <View style={styles.menu_Doctor}>
             <Icon name="doctor" style={styles.logo} />
             <Text style={styles.doctor_text}>
@@ -49,7 +40,6 @@ const HomeScreen = () => {
             </Text>
           </View>
 
-<<<<<<< HEAD
         <Icon name='doctor' style={styles.logo} onPress={onDoctorPressed}/>
         <Text style={styles.doctor_text}>Doctor
           <Text style={styles.doctor_search}>Search doctor around you</Text>
@@ -60,18 +50,6 @@ const HomeScreen = () => {
       <Icon name='clipboard-plus-outline' style={styles.logo} onPress={onPharmacyPressed}/>
         <Text style={styles.pharmacy_text}>Pharmacy</Text>
         
-=======
-          <View style={styles.menu_Doctor}>
-            <Icon name="clipboard-plus-outline" style={styles.logo} />
-            <Text style={styles.pharmacy_text}>Pharmacy</Text>
-          </View>
-
-          <View style={styles.menu_Doctor}>
-            <Icon name="alpha-e-box-outline" style={styles.logo} />
-            <Text style={styles.emergency_text}>Emergency</Text>
-          </View>
-        </View>
->>>>>>> cc82fcdb265f2aa97371b19d19840a54563f5066
       </View>
       <ImageSlider Data={Data} />
     </ScrollView>
