@@ -19,9 +19,9 @@ import { AsyncStorageStatic } from 'react-native';
 
 
 
-const PharmacyRegistrationScreen = () => {
+const PharmacyRegistrationScreen = ({navigation}) => {
 
-  // const navigation = useNavigation();
+  
     
   const [input, setInput] = useState({
       pharmacy: '',
@@ -112,7 +112,7 @@ const PharmacyRegistrationScreen = () => {
          // AsyncStorage.setItem
          registerPharmacy();
          Alert.alert('Sucessful','Record Inserted');
-        // navigation.navigate('SignIn');
+        navigation.navigate('JoinUs');
           
         } catch (error) {
           Alert.alert('Error', 'Something Went Wrong..!!');
@@ -222,10 +222,7 @@ const PharmacyRegistrationScreen = () => {
       <Text style={styles.link}> Terms of Use </Text> and <Text style={styles.link}>Privacy Policy</Text>
     </Text>   
        
-        <CustomButton text="Back to Home" 
-        onPress={onSignInPresssed} 
-        type="Secoundry" //button type=secoundry for Normal Buttons
-        />
+        
     </View>
     </ScrollView>
     </SafeAreaView>

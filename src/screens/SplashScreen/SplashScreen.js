@@ -8,7 +8,7 @@ const SplashScreen = ({navigation}) => {
   
 
   setTimeout(()=>{
-    navigation.replace("OnBoard")
+   navigation.replace("OnBoard")
   },3000)
   return (
     <View style={styles.root}>

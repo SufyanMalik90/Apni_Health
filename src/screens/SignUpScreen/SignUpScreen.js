@@ -189,7 +189,7 @@ const SignUpScreen = () => {
       <Text style={styles.link}> Terms of Use </Text> and <Text style={styles.link}>Privacy Policy</Text>
     </Text>   
         
-    <SocialSignInButtons />
+    {/* <SocialSignInButtons /> */}
 
         <CustomButton text="Have an account? Sign In" 
         onPress={onSignInPresssed} 

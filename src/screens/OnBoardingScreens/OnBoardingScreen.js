@@ -5,8 +5,8 @@ import Onboarding from 'react-native-onboarding-swiper'
 const OnBoardingScreen = ({navigation}) => {
   return (
     <Onboarding
-    onSkip={()=> navigation.navigate("SignIn")}
-    onDone={()=> navigation.navigate("SignIn")}
+    onSkip={()=> navigation.replace("SignIn")}
+    onDone={()=> navigation.replace("SignIn")}
     bottomBarHighlight={false}
     titleStyles={styles.title}
     pages={[

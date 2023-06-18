@@ -20,6 +20,8 @@ import PharmacyRegistrationScreen from './src/screens/PharmacyRegistrationScreen
 import DoctorRegistrationScreen from './src/screens/DoctorRegistrationScreen';
 import PharmacySearchScreen from './src/screens/PharmacySearchScreen';
 import HomeScreen from './src/screens/HomeScreen';
+import JoinUsScreen from './src/screens/JoinUsScreen';
+import DoctorSearchScreen from './src/screens/DoctorSearchScreen';
 
 const App = () => {
   
@@ -32,7 +34,9 @@ const App = () => {
      {/* <ForgotPasswordScreen /> */}
      {/* <HomeScreen /> */}
      {/* <PharmacySearchScreen /> */}
+     {/* <DoctorSearchScreen /> */}
      <Navigation />
+     {/* <JoinUsScreen /> */}
      {/* <PharmacyRegistrationScreen /> */}
     {/* <DoctorRegistrationScreen /> */}
      {/* <SplashScreen /> */}
