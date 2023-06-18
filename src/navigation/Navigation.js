@@ -12,6 +12,10 @@ import OnBoardingScreen from '../screens/OnBoardingScreens/OnBoardingScreen';
 import SplashScreen from '../screens/SplashScreen/SplashScreen';
 import PharmacySearchScreen from '../screens/PharmacySearchScreen';
 import DoctorSearchScreen from '../screens/DoctorSearchScreen';
+import JoinUsScreen from '../screens/JoinUsScreen';
+import DoctorRegistrationScreen from '../screens/DoctorRegistrationScreen';
+import PharmacyRegistrationScreen from '../screens/PharmacyRegistrationScreen';
+import EmergencyScreen from '../screens/EmergencyScreen/EmergencyScreen';
 const Stack = createStackNavigator();
 
 const Navigation = () => {
@@ -25,8 +29,15 @@ const Navigation = () => {
         <Stack.Screen name='Home' component={HomeScreen} />
         <Stack.Screen name="Pharmacy" component={PharmacySearchScreen} />
         <Stack.Screen name="Doctor" component={DoctorSearchScreen} />
+        <Stack.Screen name="JoinUs" component={JoinUsScreen} />
+        <Stack.Screen name="Emergency" component={EmergencyScreen} />
+
         <Stack.Screen name="ConfirmEmail" component={ConfirmEmailScreen} />
         <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
+        <Stack.Screen name="PharmacyRegister" component={PharmacyRegistrationScreen} />
+        <Stack.Screen name="DoctorRegister" component={DoctorRegistrationScreen} />
+
+
 
       </Stack.Navigator>
     </NavigationContainer>
